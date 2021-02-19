@@ -1,12 +1,12 @@
-import {Component, Input} from '@angular/core';
-import {DataService} from './data.service';
+import { Component, Input } from '@angular/core';
+import { DataService } from './data.service';
 
 const hebrewLetters = 'אבגדהוזחטיכךלמםנןסעפףצץקרשת';
-const replacements    = `0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz%!@&*#_${hebrewLetters}`;
+const replacements = `0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz%!@&*#_${hebrewLetters}`;
 
 @Component({
   selector: 'ngil-text',
-  styles  : [`
+  styles: [`
     p {
       font-family: Courier;
       letter-spacing: 9px;
@@ -44,7 +44,7 @@ export class TextComponent {
   private winners: string[];
 
   constructor(private dataService: DataService) {
-    dataService.names.subscribe( result => {
+    dataService.names.subscribe(result => {
       this.names = result.json();
       this.init();
     });
@@ -62,28 +62,28 @@ export class TextComponent {
 
   public init() {
     this.currentIteration = 0;
-    this.running          = false;
-    this.selected         = this.names[Math.random() * this.names.length | 0]['name'].toUpperCase();
-    this.covered          = this.selected.replace(/[^\s]/g, '_');
-    this.name             = this.covered;
+    this.running = false;
+    this.selected = this.names[Math.random() * this.names.length | 0]['name'].toUpperCase();
+    this.covered = this.selected.replace(/[^\s]/g, '_');
+    this.name = this.covered;
   }
 
   public start() {
     this.running = true;
-    this.timer   = setInterval(this.decode.bind(this), this.speed);
+    this.timer = setInterval(this.decode.bind(this), this.speed);
   }
 
 
   private decode() {
     let newText = this.name.split('').map(this.changeLetter().bind(this)).join('');
-    newText     =  this.currentIteration++ >= this.maxIterations ? this.selected : newText;
+    newText = this.currentIteration++ >= this.maxIterations ? this.selected : newText;
 
     if (newText === this.selected) {
       clearInterval(this.timer);
       this.running = false;
       this.dataService.addWinner(this.selected);
     }
-    this.name    = newText;
+    this.name = newText;
   }
 
   private changeLetter() {

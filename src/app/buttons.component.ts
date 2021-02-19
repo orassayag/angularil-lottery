@@ -1,8 +1,8 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ngil-buttons',
-  template: `      
+  template: `
       <button md-raised-button
               color="primary"
               (click)="start.emit()">start
@@ -15,7 +15,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
   `,
   styles: []
 })
-export class ButtonsComponent  {
+export class ButtonsComponent {
 
   @Output() start = new EventEmitter<void>();
   @Output() init = new EventEmitter<void>();
