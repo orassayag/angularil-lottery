@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DataService } from './data.service';
 
-const hebrewLetters = 'אבגדהוזחטיכךלמםנןסעפףצץקרשת';
+const hebrewLetters = 'אבגדהוזחטיכךלמםנןסעפףצץקרשת'; // cspell:disable-line
 const replacements = `0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz%!@&*#_${hebrewLetters}`;
 
 @Component({
