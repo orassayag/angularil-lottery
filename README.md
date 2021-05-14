@@ -1,4 +1,4 @@
-# Angular-IL Meetup Lottery App
+# Angularil Lottery
 
 Simple but effective app for Angular-IL meetup raffles.
 
@@ -32,7 +32,7 @@ _This project was generated with [Angular CLI](https://github.com/angular/angula
 * Or Assayag <orassayag@gmail.com>
 * GitHub: https://github.com/orassayag
 * StackOverFlow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
-* LinkedIn: https://il.linkedin.com/in/orassayag
+* LinkedIn: https://linkedin.com/in/orassayag
 
 ## License
 
