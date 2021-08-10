@@ -12,7 +12,7 @@ Feel free to submit pull requests and help us improve this widget!
 - Run `yarn`
 - Run `ng serve` for a dev server.
 - Run `npm run db` for the api
-- Navigate to `http://localhost:4200/`.
+- Navigate to `http://localhost:4200`.
 
 ## Build
 
@@ -36,4 +36,4 @@ _This project was generated with [Angular CLI](https://github.com/angular/angula
 
 ## License
 
-This application has an UNLICENSED License.
+This application has an UNLICENSED license.
