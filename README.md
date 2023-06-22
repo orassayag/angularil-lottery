@@ -36,4 +36,4 @@ _This project was generated with [Angular CLI](https://github.com/angular/angula
 
 ## License
 
-This application has an UNLICENSED license.
+This application has an MIT license.
