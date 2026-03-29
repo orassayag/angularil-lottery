@@ -1,12 +1,34 @@
 {
   "name": "angularil-lottery",
   "version": "0.0.0",
+  "description": "Angular-based lottery system for Angular-IL meetup raffles with Matrix-style animated winner reveal",
   "private": false,
   "repository": {
     "type": "git",
     "url": "git://github.com/orassayag/angularil-lottery.git"
   },
+  "keywords": [
+    "angular",
+    "lottery",
+    "raffle",
+    "meetup",
+    "angular-il",
+    "typescript",
+    "material-design",
+    "animation",
+    "hebrew-support",
+    "winner-selection"
+  ],
   "license": "MIT",
+  "author": {
+    "name": "Or Assayag",
+    "email": "orassayag@gmail.com",
+    "url": "https://github.com/orassayag"
+  },
+  "bugs": {
+    "url": "https://github.com/orassayag/angularil-lottery/issues"
+  },
+  "homepage": "https://github.com/orassayag/angularil-lottery#readme",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
