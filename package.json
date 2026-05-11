@@ -1,7 +1,7 @@
 {
   "name": "angularil-lottery",
   "version": "0.0.0",
-  "description": "Angular-based lottery system for Angular-IL meetup raffles with Matrix-style animated winner reveal",
+  "description": "An Angular-based lottery system for Angular-IL meetup raffles featuring a Matrix-style animated text reveal that randomly selects winners from attendee lists with support for Hebrew and English names. Provides an interactive and visually engaging raffle experience for meetups and community events",
   "private": false,
   "repository": {
     "type": "git",
@@ -69,5 +69,46 @@
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.2.0"
-  }
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/orassayag"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "contributors": [
+    {
+      "name": "Or Assayag",
+      "email": "orassayag@gmail.com",
+      "url": "https://github.com/orassayag"
+    }
+  ],
+  "main": "dist/main.js",
+  "type": "module",
+  "files": [
+    ".github",
+    ".vscode",
+    "src",
+    ".angular-cli.json",
+    ".editorconfig",
+    ".gitignore",
+    ".prettierrc",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "db.json",
+    "eslint.config.mjs",
+    "INSTRUCTIONS.md",
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "SECURITY.md",
+    "tsconfig.json",
+    "tsconfig.node.json",
+    "tslint.json",
+    "vitest.config.ts",
+    "yarn.lock"
+  ]
 }

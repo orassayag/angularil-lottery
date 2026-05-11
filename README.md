@@ -6,6 +6,27 @@ Built in 2017. This Angular 4 application provides an interactive and visually e
 
 ## Features
 
+### Core Capabilities
+
+- **Random Winner Selection**: Guided selection from a pre-defined attendee list.
+- **Matrix Animation**: Visually striking character reveal effect for winner announcements.
+- **Bilingual Support**: Full compatibility with Hebrew and English character sets.
+- **Real-time Data**: Dynamic fetching from a mock REST API.
+
+### Technical Excellence
+
+- **Angular Framework**: Built with Angular 4 for robust component-based development.
+- **Material Design**: Modern UI components using Angular Material.
+- **TypeScript**: Strict typing and modern JavaScript features.
+- **RxJS**: Reactive data handling for asynchronous operations.
+
+### Developer Experience
+
+- **Mock Backend**: Integrated JSON Server for easy data management.
+- **CLI Tooling**: Standard Angular CLI for development, building, and testing.
+- **Hot Reloading**: Instant feedback during development.
+- **Modular Design**: Clean separation of concerns between components and services.
+
 - 🎲 Random winner selection from attendee pool
 - 🎬 Matrix-style character animation reveal effect
 - 🌐 Bilingual support (Hebrew & English)
@@ -26,17 +47,20 @@ Built in 2017. This Angular 4 application provides an interactive and visually e
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/orassayag/angularil-lottery.git
 cd angularil-lottery
 ```
 
 2. Install Angular CLI globally:
+
 ```bash
 npm install -g @angular/cli
 ```
 
 3. Install dependencies:
+
 ```bash
 npm install
 # or
@@ -46,6 +70,7 @@ yarn install
 ### Configuration
 
 Edit the attendee list in `db.json`:
+
 ```json
 {
   "jspoland": [
@@ -58,6 +83,7 @@ Edit the attendee list in `db.json`:
 ```
 
 Adjust animation settings in `src/app/app.component.ts`:
+
 - `maxIterations`: Animation cycle count (default: 250)
 - `speed`: Animation speed in milliseconds (default: 17ms)
 
@@ -66,16 +92,60 @@ Adjust animation settings in `src/app/app.component.ts`:
 ### Running the Application
 
 1. Start the JSON Server (serves attendee data):
+
 ```bash
 npm run db
 ```
 
 2. In a separate terminal, start the development server:
+
 ```bash
 ng serve
 ```
 
 3. Navigate to `http://localhost:4200` in your browser
+
+## Available Scripts
+
+### Data Server
+
+```bash
+npm run db
+```
+
+Starts the JSON Server on `http://localhost:3000` to serve the attendee list.
+
+### Development Server
+
+```bash
+ng serve
+```
+
+Runs the development server on `http://localhost:4200`.
+
+### Testing
+
+```bash
+ng test
+```
+
+Executes unit tests via Karma.
+
+### Linting
+
+```bash
+ng lint
+```
+
+Runs TSLint to check code quality.
+
+### Build
+
+```bash
+ng build
+```
+
+Compiles the application for production.
 
 ### Operating the Lottery
 
@@ -85,6 +155,37 @@ ng serve
 4. **Repeat** - Initialize again for additional winners
 
 ## Architecture
+
+### Architecture Principles
+
+- **Unidirectional Data Flow**: Data flows from parent to child components via inputs.
+- **Separated Concerns**: Business logic is isolated in services, keeping components focused on UI.
+- **Dependency Injection**: Services are injected for better modularity and testability.
+- **Reactive Programming**: Using RxJS for efficient data handling.
+
+### Directory Structure
+
+```
+src/
+├── app/                    # Main application logic
+│   ├── app.component.ts    # Root container
+│   ├── app.module.ts       # Module definitions
+│   ├── text.component.ts   # Lottery animation
+│   ├── buttons.component.ts# UI controls
+│   └── data.service.ts     # API integration
+├── environments/           # Configuration files
+├── assets/                 # Static resources
+├── index.html              # Entry HTML
+└── main.ts                 # Bootstrap script
+```
+
+### Design Patterns
+
+- **Observer Pattern**: Using Observables to stream data from services to components.
+- **Singleton Pattern**: Angular services act as singletons for shared state.
+- **Component Pattern**: Encapsulating UI and behavior into reusable blocks.
+
+### Component Flow
 
 ```mermaid
 graph TD
@@ -96,14 +197,12 @@ graph TD
     F --> G[Character Decoder]
     G --> H[Winner Display]
     B --> I[Winners History]
-    
+
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style B fill:#bbf,stroke:#333,stroke-width:2px
     style D fill:#bfb,stroke:#333,stroke-width:2px
     style E fill:#fbb,stroke:#333,stroke-width:2px
 ```
-
-### Component Flow
 
 ```mermaid
 sequenceDiagram
@@ -112,7 +211,7 @@ sequenceDiagram
     participant TextComponent
     participant DataService
     participant JSONServer
-    
+
     User->>AppComponent: Load Application
     AppComponent->>TextComponent: Initialize
     TextComponent->>DataService: Request Names
@@ -158,7 +257,7 @@ angularil-lottery/
 
 1. **Initialization**: A random name is selected from the attendee pool
 2. **Masking**: The name is initially hidden with underscores
-3. **Decoding Loop**: 
+3. **Decoding Loop**:
    - Characters cycle through random replacements
    - After 50 iterations, correct letters lock in place
    - Continues until `maxIterations` is reached
@@ -167,6 +266,7 @@ angularil-lottery/
 ### Character Pool
 
 The animation uses a diverse character set:
+
 - Numbers: 0-9
 - Uppercase: A-Z
 - Lowercase: a-z
@@ -179,14 +279,24 @@ The animation uses a diverse character set:
 - Display order is reversed for proper right-to-left rendering
 - All Hebrew characters are supported in the animation
 
+## Best Practices
+
+- **Component Isolation**: Each UI element is a self-contained component for better maintainability.
+- **Service-Based Data**: Business logic is decoupled from the UI in dedicated services.
+- **Environment Configurations**: Use separate environment files for development and production settings.
+- **Linting**: Consistent code style is enforced by TSLint for quality assurance.
+- **Strict Typing**: Leverage TypeScript's type system to catch errors at compile-time.
+
 ## Build
 
 ### Development Build
+
 ```bash
 ng build
 ```
 
 ### Production Build
+
 ```bash
 ng build --prod
 ```
@@ -196,6 +306,7 @@ Build artifacts are stored in the `dist/` directory.
 ## Development
 
 The project uses:
+
 - **Angular 4.x** - Core framework
 - **Angular Material 2.x** - UI components
 - **TypeScript 2.2** - Type-safe JavaScript
@@ -203,12 +314,14 @@ The project uses:
 - **json-server** - Mock REST API
 
 ### Testing
+
 ```bash
 ng test        # Unit tests via Karma
 ng e2e         # End-to-end tests via Protractor
 ```
 
 ### Linting
+
 ```bash
 ng lint        # TSLint code quality check
 ```
@@ -225,15 +338,21 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## Credit
 
-* Nir Kaufman - https://github.com/nirkaufman
+- Nir Kaufman - https://github.com/nirkaufman
+
+## Acknowledgments
+
+- **Nir Kaufman**: For the original inspiration and collaboration on the community project.
+- **Angular-IL Community**: For being a great platform for tech sharing and community events.
+- **Open Source Contributors**: For the libraries and tools that made this project possible.
 
 ## Author
 
-* **Or Assayag** - *Initial work* - [orassayag](https://github.com/orassayag)
-* Or Assayag <orassayag@gmail.com>
-* GitHub: https://github.com/orassayag
-* StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
-* LinkedIn: https://linkedin.com/in/orassayag
+- **Or Assayag** - _Initial work_ - [orassayag](https://github.com/orassayag)
+- Or Assayag <orassayag@gmail.com>
+- GitHub: https://github.com/orassayag
+- StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
+- LinkedIn: https://linkedin.com/in/orassayag
 
 ## License
 

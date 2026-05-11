@@ -9,6 +9,7 @@ Everyone is welcome to contribute to this project. Contributing doesn't just mea
 ### Reporting Issues
 
 If you find a bug or have a feature request:
+
 1. Check if the issue already exists in the [GitHub Issues](https://github.com/orassayag/angularil-lottery/issues)
 2. If not, create a new issue with:
    - Clear title and description
@@ -31,12 +32,14 @@ If you find a bug or have a feature request:
 ### Code Style Guidelines
 
 This project uses:
+
 - **Angular** 4.x framework
 - **TypeScript** for type safety
 - **Angular Material** for UI components
 - **TSLint** for code quality
 
 Before submitting:
+
 ```bash
 # Install dependencies
 npm install
@@ -63,6 +66,7 @@ ng build --prod
 ### Adding New Features
 
 When adding new features:
+
 1. Update component templates and styles as needed
 2. Add service methods in appropriate service files
 3. Update the `db.json` if data structure changes
@@ -81,9 +85,9 @@ When adding new features:
 
 Please feel free to contact me with any question, comment, pull-request, issue, or any other thing you have in mind.
 
-* Or Assayag <orassayag@gmail.com>
-* GitHub: https://github.com/orassayag
-* StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
-* LinkedIn: https://linkedin.com/in/orassayag
+- Or Assayag <orassayag@gmail.com>
+- GitHub: https://github.com/orassayag
+- StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
+- LinkedIn: https://linkedin.com/in/orassayag
 
 Thank you for contributing! 🙏

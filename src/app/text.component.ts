@@ -6,30 +6,36 @@ const replacements = `0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvw
 
 @Component({
   selector: 'ngil-text',
-  styles: [`
-    p {
-      font-family: Courier;
-      letter-spacing: 9px;
-      font-size: 60px;
-    }
-    .single-char {
-      display: inline-block;
-      width: 45px;
-      height: 73px;
-      vertical-align: bottom;
-    }`],
+  styles: [
+    `
+      p {
+        font-family: Courier;
+        letter-spacing: 9px;
+        font-size: 60px;
+      }
+      .single-char {
+        display: inline-block;
+        width: 45px;
+        height: 73px;
+        vertical-align: bottom;
+      }
+    `,
+  ],
   template: `
-    <p><span class="single-char" *ngFor="let c of nameArr">{{ c }}</span></p>
+    <p>
+      <span class="single-char" *ngFor="let c of nameArr">{{ c }}</span>
+    </p>
 
-    <ngil-buttons *ngIf="!running"
-                  (start)="start()"
-                  (init)="init()"></ngil-buttons>
+    <ngil-buttons
+      *ngIf="!running"
+      (start)="start()"
+      (init)="init()"
+    ></ngil-buttons>
     <h1>Winners</h1>
     <p *ngFor="let winner of winners">{{ winner }}</p>
   `,
 })
 export class TextComponent {
-
   @Input() maxIterations: number;
   @Input() speed: number;
 
@@ -44,7 +50,7 @@ export class TextComponent {
   private winners: string[];
 
   constructor(private dataService: DataService) {
-    dataService.names.subscribe(result => {
+    dataService.names.subscribe((result) => {
       this.names = result.json();
       this.init();
     });
@@ -57,13 +63,16 @@ export class TextComponent {
 
     const splitName = this.name.split('');
 
-    return hebrewLetters.includes(this.selected[0]) ? splitName.reverse() : splitName;
+    return hebrewLetters.includes(this.selected[0])
+      ? splitName.reverse()
+      : splitName;
   }
 
   public init() {
     this.currentIteration = 0;
     this.running = false;
-    this.selected = this.names[Math.random() * this.names.length | 0]['name'].toUpperCase();
+    this.selected =
+      this.names[(Math.random() * this.names.length) | 0]['name'].toUpperCase();
     this.covered = this.selected.replace(/[^\s]/g, '_');
     this.name = this.covered;
   }
@@ -73,10 +82,13 @@ export class TextComponent {
     this.timer = setInterval(this.decode.bind(this), this.speed);
   }
 
-
   private decode() {
-    let newText = this.name.split('').map(this.changeLetter().bind(this)).join('');
-    newText = this.currentIteration++ >= this.maxIterations ? this.selected : newText;
+    let newText = this.name
+      .split('')
+      .map(this.changeLetter().bind(this))
+      .join('');
+    newText =
+      this.currentIteration++ >= this.maxIterations ? this.selected : newText;
 
     if (newText === this.selected) {
       clearInterval(this.timer);
@@ -91,10 +103,13 @@ export class TextComponent {
     return (letter, index) => {
       if (this.selected[index] === ' ') {
         return ' ';
-      } else if (this.selected[index] === letter && this.currentIteration > 50) {
+      } else if (
+        this.selected[index] === letter &&
+        this.currentIteration > 50
+      ) {
         return letter;
       } else {
-        return replacements[Math.random() * replacementsLen | 0];
+        return replacements[(Math.random() * replacementsLen) | 0];
       }
     };
   }

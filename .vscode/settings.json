@@ -1,14 +1,13 @@
 {
-    "cSpell.words": [
-        "Assayag",
-        "angularil",
-        "codelyzer",
-        "forin",
-        "ngil",
-        "orassayag"
-    ],
-    "cSpell.ignorePaths": [
-        "db.json",
-        "yarn.lock"
-    ],
+  "cSpell.words": [
+    "angularil",
+    "Assayag",
+    "codelyzer",
+    "forin",
+    "libpeerconnection",
+    "ngil",
+    "orassayag",
+    "testem"
+  ],
+  "cSpell.ignorePaths": ["db.json", "yarn.lock"]
 }

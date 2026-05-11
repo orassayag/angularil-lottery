@@ -1,42 +1,29 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Distribution
+dist
+out
+build
+node_modules
 
-# compiled output
-/dist
-/tmp
-/out-tsc
+# Logs
+*.log*
+logs
 
-# dependencies
-/node_modules
+# Environment
+*.env*
+!.env.example
+.env.production
+.env.test
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# OAuth
+token.json
+client_secret*.json
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# Runtime Data
+api-stats.json
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-testem.log
-/typings
-
-# e2e
-/e2e/*.js
-/e2e/*.map
-
-# System Files
+# Misc
 .DS_Store
-Thumbs.db
+.pnpm-store
+
+# Tests
+coverage
