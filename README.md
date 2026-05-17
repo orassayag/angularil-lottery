@@ -342,9 +342,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## Acknowledgments
 
-- **Nir Kaufman**: For the original inspiration and collaboration on the community project.
-- **Angular-IL Community**: For being a great platform for tech sharing and community events.
-- **Open Source Contributors**: For the libraries and tools that made this project possible.
+- Built for educational and research purposes
+- Respects robots.txt and implements rate limiting
+- Uses user-agent rotation to avoid detection
+- Implements polite crawling practices
 
 ## Author
 
